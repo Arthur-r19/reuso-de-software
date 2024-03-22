@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personagem</title>
+</head>
+<body>
+<h1>Olá, <%= @player.username %>!</h1>
+<% if @player.level > 10 %>
+<h2>PARABÉNS, VOCÊ SE FORMOU!!! FINALMENTE!!</h2>
+<% end %>
+<h2>Seus status:</h2>
+<l> Período: <%= @player.level %></l><br>
+<l> Sanidade Mental: <%= @player.sanity %></l><br>
+<l> Conhecimento: <%= @player.knowledge %></l>
+
+<h2>Escolha sua ação:</h2>
+<ul>
+    <% unless @player.level > 10 %>
+    <li><%= button_to "Estudar", study_path, method: :post %></li>
+    <li><%= button_to "Fazer a prova", challenge_path, method: :post %></li>
+  -------------------
+    <% end %>
+  <li><%= button_to "Logout", authentication_logout_path, method: :delete %></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<h1>Criar Conta</h1>
+
+<%= form_with scope: :auth, url: authentication_sign_up_path do |f|  %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Criar" %>
+<% end %>
